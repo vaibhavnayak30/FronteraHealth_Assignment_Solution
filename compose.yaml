@@ -1,0 +1,46 @@
+# Compose file for the Frontera Assesment Test
+services:
+  app:
+    build: app              # Dockerfile location for the app
+    ports:
+      - "8000:8000"         # Expose the app on port 8000 for incoming requests
+    depends_on:             # Ensure Redis starts first
+      - redis
+    environment:
+    - REDIS_HOST=redis      # Set redis env variables for connection
+    - REDIS_PORT=6379
+    networks:
+      - app-network         # Connect to the app-network
+    restart: "on-failure:3" # Restart the app container on failure
+
+  redis:
+    image: "redis:latest"        # Get latest Redis image
+    networks:
+      - app-network              # Connect to the app-network
+    restart: "always"            # Restart the app container on failure
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli ping"] # Check if Redis is up
+      interval: 10s                         # Check every 10 seconds
+      timeout: 5s                           # Timeout after 5 seconds
+      retries: 3                            # Retry 3 times before considering unhealthy
+      start_period: 1m                      # Give Redis 1 minute to start initially
+
+  backend:
+    build: backend              # Dockerfile location for the app
+    ports:
+      - "8080:8080"             # Expose the app on port 8000 for incoming requests
+    depends_on:                 # Ensure Redis starts first
+      - redis
+    environment:
+    - REDIS_HOST=redis          # Set redis env variables for connection
+    - REDIS_PORT=6379
+    networks:
+      - app-network             # Connect to the app-network
+    restart: "on-failure:3"     # Restart the app container on failure
+
+# volumes:
+#   redis_data:
+
+networks:
+  app-network:
+    driver: bridge
