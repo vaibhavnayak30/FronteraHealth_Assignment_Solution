@@ -29,7 +29,7 @@ Before you start the application, ensure you have the docker and docker-compose 
     ```
 2. Navigate to the project directory:
     ```bash
-    cd Frontera-Health
+    cd FronteraHealth_Assignment_Solution
     ```
 
 ## Starting the Application
