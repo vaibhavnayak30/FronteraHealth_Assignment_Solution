@@ -3,7 +3,7 @@ services:
   app:
     build: app              # Dockerfile location for the app
     ports:
-      - "8000:8000"         # Expose the app on port 8000 for incoming requests
+      - "8080:8080"         # Expose the app on port 8000 for incoming requests
     depends_on:             # Ensure Redis starts first
       - redis
     environment:
@@ -28,7 +28,7 @@ services:
   backend:
     build: backend              # Dockerfile location for the app
     ports:
-      - "8080:8080"             # Expose the app on port 8000 for incoming requests
+      - "8000:8000"             # Expose the app on port 8000 for incoming requests
     depends_on:                 # Ensure Redis starts first
       - redis
     environment:

@@ -24,7 +24,7 @@ MODEL_PARAMETERS = {
 # Inference Server Details
 INFERENCE_SERVER = {
     "host" : "0.0.0.0",
-    "port" : 8080
+    "port" : 8000
 }
 
 # Redis Service 

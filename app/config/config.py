@@ -8,7 +8,7 @@ DESCRIPTION = "Frontera Health Assignment API Server"
 # API Server Details
 API_SERVER = {
     "host" : "0.0.0.0",
-    "port" : 8000
+    "port" : 8080
 }
 
 # Redis Service 

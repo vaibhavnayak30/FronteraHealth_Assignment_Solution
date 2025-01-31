@@ -15,7 +15,7 @@ RUN pip install --no-cache-dir --upgrade pip setuptools wheel \
 COPY . .
 
 # Expose the port that the FastAPI app will run on
-EXPOSE 8000
+EXPOSE 8080
 
 # Command to run the FastAPI app using Uvicorn
 CMD ["python", "app.py"]

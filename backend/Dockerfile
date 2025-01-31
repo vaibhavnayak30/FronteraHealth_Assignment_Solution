@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y && pip install 
 COPY . .
 
 # Expose the port that the FastAPI app will run on
-EXPOSE 8080
+EXPOSE 8000
 
 # Command to run the FastAPI app using Uvicorn
 CMD ["python", "main.py"]
