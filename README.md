@@ -33,12 +33,17 @@ Before you start the application, ensure you have the docker and docker-compose 
     ```
 
 ## Starting the Application
-To start the application, run the following command:
+To start the application first time, run the following command:
 ```bash
-docker-compose up
+docker-compose up --build
 ```
 The application will be available at `http://localhost:8080`.
 FAST-API SWAGGER page is available at  `http://localhost:8080/docs`
+
+For subsequent runs, use:
+'''bash
+docker-compose up
+'''
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
