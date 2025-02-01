@@ -43,7 +43,3 @@ class RedisManager:
 
         except Exception as e:
             logger.info(msg=f"Couldn't close redis connection with error: {e}")
-
-
-# if __name__ == "__main__":
-#     asyncio.run(RedisManager.connect())

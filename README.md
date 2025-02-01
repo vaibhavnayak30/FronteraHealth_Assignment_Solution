@@ -37,7 +37,7 @@ To start the application, run the following command:
 ```bash
 docker-compose up
 ```
-The application will be available at `http://localhost:8000`.
+The application will be available at `http://localhost:8080`.
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

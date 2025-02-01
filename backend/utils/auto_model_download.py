@@ -32,8 +32,3 @@ class Model:
                 logging.info(msg=f"Failed to download file. Status code: {response.status_code}")
         else:
             logging.info(f"{model_path} already exists at {model_path}.")
-
-
-    # # Define filename and URL
-    # filename = "yolo11x-cls.pt"
-    # url = "https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11x-cls.pt"  # Replace with the actual URL
