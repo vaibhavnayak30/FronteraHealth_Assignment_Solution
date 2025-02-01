@@ -38,6 +38,7 @@ To start the application, run the following command:
 docker-compose up
 ```
 The application will be available at `http://localhost:8080`.
+FAST-API SWAGGER page is available at  `http://localhost:8080/docs`
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
